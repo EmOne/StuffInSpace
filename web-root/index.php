@@ -14,14 +14,14 @@ header('Content-Type: text/html; charset=utf-8');
     <script src="/scripts/satellite.min.js"></script>
     <script src="/script-loader.php"></script>
     
-    <?php if($_SERVER['HTTP_HOST'] === 'stuffin.space' || $_SERVER['HTTP_HOST'] === 'www.stuffin.space') { ?>
+    <?php if($_SERVER['HTTP_HOST'] === 'space.emone.co.th') { ?>
       <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
       
-        ga('create', 'UA-64721672-1', 'auto');
+        ga('create', 'UA-65232030-2 ', 'auto');
         ga('send', 'pageview');
       </script> 
    <?php } else { ?>
@@ -109,8 +109,8 @@ header('Content-Type: text/html; charset=utf-8');
         <!--  <p>My name is James Yoder; I'm an alumnus of <a href="http://www.usfirst.org/roboticsprograms/frc"><i>FIRST</i> Robotics
           Competition </a> (FRC) <a href="http://team624.org">Team 624</a> and an incoming Electrical and Computer Engineering freshman at the 
           University of Texas at Austin. </p> -->
-          <p>Contact: <a href="mailto:info@stuffin.space">info@stuffin.space</a></p>
-          <p>See Stuff in Space on <a href="https://github.com/jeyoder/ThingsInSpace"> GitHub </a></p>
+          <p>Contact: <a href="mailto:info@emone.co.th">info@stuffin.space</a></p>
+          <p>See Stuff in Space on <a href="https://github.com/emone/stuffinspace"> GitHub </a></p>
         </div>
       </div>
     </div>

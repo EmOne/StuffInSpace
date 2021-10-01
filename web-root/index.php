@@ -32,15 +32,20 @@ header('Referrer-Policy: origin-when-cross-origin');
     
     <title>Outer Space of Earth</title>
     
+  <script src="https://cdn.digitalarsenal.io/cesium/digitalarsenal.cesium.js"></script>
   </head>
   <body>
-  <script src="https://cdn.digitalarsenal.io/cesium/digitalarsenal.cesium.js"></script>
-  <div id="no-webgl">
+ <div id="no-webgl">
     Outer space requires <a href="http://caniuse.com/#feat=webgl">WebGL</a> and <a href="http://caniuse.com/#feat=webworkers">Web Worker</a> support. 
   </div>
   <div id="canvas-holder">
     <canvas id="canvas"></canvas>
     <div id="menu-left" class="menubar">
+
+    <div id="center_button" class="menu-item">
+      <span class="icon-undo2" onclick="location.href='index.php'"></span>
+    </div>
+ 
       <div id="search-holder" class="menu-item">
         <span class="icon-search"></span>
         <input type="text" id="search"></input>

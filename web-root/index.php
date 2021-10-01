@@ -1,5 +1,7 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
+header('Access-Control-Allow-Origin: *');
+header('Referrer-Policy: origin-when-cross-origin');
 ?>
 <!doctype html>
 <html>
@@ -10,11 +12,11 @@ header('Content-Type: text/html; charset=utf-8');
     <link rel="stylesheet" href="/perfect-scrollbar.min.css" type="text/css">
     <link rel="stylesheet" href="/style.css" type="text/css">
     
-    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="/scripts/jquery-2.1.3.min.js"></script>
     <script src="/scripts/satellite.min.js"></script>
     <script src="/script-loader.php"></script>
     
-    <?php if($_SERVER['HTTP_HOST'] === 'space.emone.co.th') { ?>
+    <?php if($_SERVER['HTTP_HOST'] === 'emone.space') { ?>
       <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -28,12 +30,13 @@ header('Content-Type: text/html; charset=utf-8');
     <!-- analytics disabled for host "<?= $_SERVER['HTTP_HOST'] ?>" -->
    <?php } ?>
     
-    <title>Stuff in Space</title>
+    <title>Outer Space of Earth</title>
     
   </head>
   <body>
+  <script src="https://cdn.digitalarsenal.io/cesium/digitalarsenal.cesium.js"></script>
   <div id="no-webgl">
-    Stuff in Space requires <a href="http://caniuse.com/#feat=webgl">WebGL</a> and <a href="http://caniuse.com/#feat=webworkers">Web Worker</a> support. 
+    Outer space requires <a href="http://caniuse.com/#feat=webgl">WebGL</a> and <a href="http://caniuse.com/#feat=webworkers">Web Worker</a> support. 
   </div>
   <div id="canvas-holder">
     <canvas id="canvas"></canvas>
@@ -55,14 +58,14 @@ header('Content-Type: text/html; charset=utf-8');
           <li data-group="SpaceXGroup">SpaceX</li>
         </ul>
       </div>
-     <!-- <div id="menu-color-schemes" class="menu-item">
+      <!-- <div id="menu-color-schemes" class="menu-item">
         <div class="menu-title">Color Schemes</div>
         <ul id="color-schemes-submenu" class="submenu">
           <li data-color="default">Type</li>
           <li data-color="velocity">Velocity</li>
           <li data-color="apogee">Apogee</li>
         </ul>
-      </div>-->
+      </div> -->
     </div>
     <div id="menu-right" class="menubar">
       <div id="menu-help" class="menu-item">
@@ -98,18 +101,17 @@ header('Content-Type: text/html; charset=utf-8');
       <div id="menu-about" class="menu-item">
         <div class="menu-title">About</div>
         <div id="about-box" class="menubox submenu">
-          <span class="box-header">Stuff in Space</span>
-          <p>Stuff in Space is a realtime 3D map of objects in Earth orbit, visualized using WebGL.</p>
+          <span class="box-header">Outer Space of Earth</span>
+          <p>Outer Space of Earth is a realtime 3D map of objects in Earth orbit, visualized using WebGL.</p>
           
           <p>The website updates daily with orbit data from <a href="http://www.space-track.org">Space-Track.org</a> 
-          and uses the excellent <a href="https://github.com/shashwatak/satellite-js">satellite.js</a> Javascript library
+          and uses the excellent <a href="https://github.com/emone/satellite-js">satellite.js</a> Javascript library
           to calculate satellite positions.</p>
           
           <span class="box-header">About the author</span>
-        <!--  <p>My name is James Yoder; I'm an alumnus of <a href="http://www.usfirst.org/roboticsprograms/frc"><i>FIRST</i> Robotics
-          Competition </a> (FRC) <a href="http://team624.org">Team 624</a> and an incoming Electrical and Computer Engineering freshman at the 
-          University of Texas at Austin. </p> -->
-          <p>Contact: <a href="mailto:info@emone.co.th">info@stuffin.space</a></p>
+	  <p>Author: James Yoder</p>
+	  <p>Contribution by Anol P.</p>
+          <p>Contact: <a href="mailto:info@emone.space">info@emone.space</a></p>
           <p>See Stuff in Space on <a href="https://github.com/emone/stuffinspace"> GitHub </a></p>
         </div>
       </div>
@@ -156,6 +158,8 @@ header('Content-Type: text/html; charset=utf-8');
       <div id="zoom-in" class="zoom-button">+</div>
       <div id="zoom-out" class="zoom-button">-</div>
     </div>
+
+
     <div id="load-cover">
       <div id="loader">
         <div id="spinner"></div>

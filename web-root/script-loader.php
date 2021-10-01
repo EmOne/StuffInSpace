@@ -1,5 +1,8 @@
 <?php
 header('Content-type: text/javascript');
+header('Access-Control-Allow-Origin: https://space.emone.co.th');
+header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
+header('Referrer-Policy: origin-when-cross-origin');
 
 $scriptFiles = [
 
@@ -7,7 +10,7 @@ $scriptFiles = [
 'gl-matrix-min.js',
 'spin.min.js',
 'perfect-scrollbar.jquery.min.js',
-//'satellite.js',
+'satellite.js',
 
 //our script files
 'shader-loader.js',
